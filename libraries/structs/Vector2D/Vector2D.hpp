@@ -1,5 +1,6 @@
 #pragma once
 #include <game/game.hpp>
+#include <cmath>
 
 struct Vector2D {
     Vector2D() = default;
