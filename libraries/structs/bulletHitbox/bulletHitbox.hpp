@@ -9,7 +9,9 @@ class BulletHitbox {
 public:
     BulletHitbox(Bullet* owner_, bool back);
     ~BulletHitbox() {
+#ifdef LOGS
         std::cout << "Hitbox deleted" << '\n';
+#endif
     }
     void Draw();
     void Update();

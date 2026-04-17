@@ -49,7 +49,9 @@ void Spawner::Spawn() {
     
     meteor.AddComponent<MeteorHitbox>();
 
+#ifdef LOGS
     std::cout << size << '\n';
+#endif
 }
 
 void Spawner::SeBoarders(int left, int right) {

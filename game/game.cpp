@@ -27,12 +27,16 @@ void Game::Init(const char* title, int xPos, int yPos, int width, int height, bo
         isRunning = true;
     }
     else {
+#ifdef LOGS
         std::cerr << "Failed to init SDL" << '\n';
+#endif
         isRunning = false;
     }
 
     if (!TTF_Init()) {
+#ifdef LOGS
         std::cerr << "Failed to init TTF" << '\n';
+#endif
         return;
     }
 

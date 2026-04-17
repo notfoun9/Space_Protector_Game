@@ -6,7 +6,9 @@
     SDL_Surface* tmpSurface = IMG_Load(texture);
     SDL_Texture* textureFromSurface = SDL_CreateTextureFromSurface(Game::renderer, tmpSurface);
     if (!textureFromSurface) {
+#ifdef LOGS
         std::cerr << "Texture: " << texture << " is not created" << '\n';
+#endif
     }
 
     SDL_DestroySurface(tmpSurface);

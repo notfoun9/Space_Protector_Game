@@ -63,5 +63,7 @@ void Shooter::Shoot() {
         bullets.insert(bul);
         --bulletsLeft;
     }
+#ifdef LOGS
     std::cout << "Bullets left: " << bulletsLeft << '\n';
+#endif
 }

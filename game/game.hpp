@@ -82,7 +82,9 @@ struct Hitboxes {
         if (SDL_GetTicks() - tick > 500) {
             tick = SDL_GetTicks();
             active = !active;
+#ifdef LOGS
             std::cout << (active ? "Hitboxes Shown" : "Hitboxes Hidden") << std::endl;
+#endif
         }
     }
 

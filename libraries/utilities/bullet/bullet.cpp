@@ -8,9 +8,15 @@ Bullet::Bullet(Shooter* owner_) : owner(owner_) {
 
     velocity.x = owner->GetSpeed() * SDL_cos(angle * (3.14 / 180));
     velocity.y = owner->GetSpeed() * SDL_sin(angle * (3.14 / 180));
+#ifdef LOGS
     std::cout << angle << '\n';
+#endif
+#ifdef LOGS
     std::cout << SDL_sin(angle * (3.14 / 180)) << '\n';
+#endif
+#ifdef LOGS
     std::cout << SDL_cos(angle * (3.14 / 180)) << '\n';
+#endif
     texture = owner->GetTex();
     destFRect = owner->destFRect;
     srcFRect = owner->srcFRect;
@@ -33,7 +39,9 @@ Bullet::~Bullet() {
     owner->owner->GetComponent<BulletsCollider>().DeleteBox(backHitbox);
     delete hitbox;
     delete backHitbox;
+#ifdef LOGS
     std::cout << "Bullet Destroyed" << '\n';
+#endif
 }
 
 void Bullet::Update() {

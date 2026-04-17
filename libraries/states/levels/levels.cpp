@@ -49,7 +49,9 @@ void Levels::Update() {
     if (e.type == SDL_EVENT_MOUSE_BUTTON_UP && e.button.button == SDL_BUTTON_LEFT) {
         for (int i = 0; i < buts.size(); ++i) {
             if (buts[i]->GetComponent<Button>().IsSelected()) {
+#ifdef LOGS
                 std::cout << "Level " << i << "is started" << '\n';
+#endif
                 game->SetSettings(i + 1);
                 game->endlessMode = 0;
                 game->inMenu = 0;
@@ -58,7 +60,9 @@ void Levels::Update() {
             }
         }
         if (endlessMode->GetComponent<Button>().IsSelected()) {
+#ifdef LOGS
             std::cout << "EndlessMode is selected" << '\n';
+#endif
             game->SetSettings(0);
             game->endlessMode = 1;
             game->inMenu = 0;

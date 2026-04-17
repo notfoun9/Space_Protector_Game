@@ -7,9 +7,13 @@ Text::Text(std::string fontPath, int fontSize, const SDL_Color color_) :
     TTF_Init();
     const char* f = fontPath.data();
     font = TTF_OpenFont(f, fontSize);
+#ifdef LOGS
     std::cerr << SDL_GetError() << '\n';
+#endif
     if (!font) {
+#ifdef LOGS
         std::cerr << "Failed to load font\n";
+#endif
     }
 }
 
@@ -53,6 +57,8 @@ void Text::Update() {
 }
 
 void Text::Draw() {
+#ifdef LOGS
     if (!textTex) std::cerr << "error" << '\n';
+#endif
     SDL_RenderTexture(Game::renderer, textTex, NULL, &destRect);
 }

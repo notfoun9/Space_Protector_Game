@@ -19,7 +19,9 @@ void AnimatedTexture::Update() {
     destFRect.x = (int)owner->GetComponent<PositionComponent>().X();
     destFRect.y = (int)owner->GetComponent<PositionComponent>().Y();
     if (speed == 0) {
+#ifdef LOGS
         std::cerr << "Animation is not set!" << '\n';
+#endif
         return;
     }
     srcFRect.x = srcFRect.w * static_cast<int>((SDL_GetTicks() / speed) % frames);

@@ -89,7 +89,9 @@ void Party::Run() {
             launcher.GetComponent<Shooter>().DeleteBulls();
             spawner.GetComponent<Spawner>().DeleteMets();   
 
+#ifdef LOGS
             std::cout << "ESC pressed" << '\n';
+#endif
             continue;
         }
         if (keystat[SDL_SCANCODE_H]) {

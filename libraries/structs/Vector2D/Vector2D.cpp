@@ -25,7 +25,9 @@ Vector2D& Vector2D::operator-=(const Vector2D& rhs) {
 // }
 // Vector2D& Vector2D::Divide(const Vector2D& vec) {
 //     if (vec.x == 0 && vec.y == 0) {
+//         #ifdef LOGS
 //         std::cerr << "deviding by zero is not allowed";
+//         #endif
 //         throw("deviding by zero is not allowed");
 //     }
 //     x /= vec.x;

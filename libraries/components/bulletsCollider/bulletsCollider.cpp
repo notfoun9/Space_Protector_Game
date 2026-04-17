@@ -33,7 +33,9 @@ void BulletsCollider::DeleteBox(BulletHitbox* box) {
     for (auto iter = boxes.begin(); iter != boxes.end(); ++iter) {
         if (*iter == box) {
             boxes.erase(iter);
+#ifdef LOGS
             std::cout << "Hitbox erased from collider" << '\n';
+#endif
             return;
         }
     }

@@ -29,6 +29,8 @@ void BulletHitbox::Update() {
 }
 
 void BulletHitbox::DestroyOwner() { 
+#ifdef LOGS
     std::cout << "Hit" << '\n';
+#endif
     owner->owner->AddBulletToDest(owner);
 }
